@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Rowdies:wght@300;400;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .clock {
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        color: #ffc107;
+        display: grid;
+        place-items: center;
+    }
+
+    #clock {
+        font-size: 300px;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+</style>
+
+<body>
+    <div class="clock">
+        <p id="clock"></p>
+    </div>
+
+    <script>
+        function updateClock() {
+            let current = new Date();
+            let hours = current.getHours()
+            let minutes = current.getMinutes();
+            let seconds = current.getSeconds();
+            let time = `${hours}:${minutes}:${seconds}`;
+
+            let finalTime = document.getElementById('clock');
+            finalTime.innerHTML = time;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+
+</html>
